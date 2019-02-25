@@ -8,15 +8,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to 'LeavityV2_Git', root_path, class: 'navbar-brand' %>
+      <button type="button" class="btn btn-light"><%= link_to 'LeavityV2_Git', root_path, class: 'navbar-brand' %></button>
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li><%= link_to 'Poster une annonce', new_annonce_path %></li>
+        <li><button type="button" class="btn btn-light"><%= link_to 'Poster une annonce', new_annonce_path, class: 'navbar-brand' %></button></li>
         <li>
           <% if user_signed_in? %>
-            <%= link_to current_user.email, user_path(current_user) %>
-            <%= link_to 'Deconnexion', destroy_user_session_path, method: :delete %>
+          <button type="button" class="btn btn-light"><%= link_to current_user.email, user_path(current_user), class: 'navbar-brand' %></button>
+          <button type="button" class="btn btn-danger"><%= link_to 'deconnexion', destroy_user_session_path, method: :delete, class: 'navbar-brand' %></button>
           <% else %>
             <%= link_to 'Connexion', new_user_session_path %>
             <%= link_to 'Inscription', new_user_registration_path %>
