@@ -1,5 +1,10 @@
+<% if current_user %>
 <h1>New Annonce</h1>
-
 <%= render 'form', annonce: @annonce %>
 <%= link_to 'Back', annonces_path %>
+<% else %>
+<h1> Vous devez être authentifié pour créer une annonce !!!!</h1>
+<%= link_to '<div>Cliquez ici pour vous connecter</div>'.html_safe, new_user_session_path %>
+<%= link_to '<div>Cliquez ici pour vous inscrire</div>'.html_safe, new_user_registration_path %>   
+<% end %>
 

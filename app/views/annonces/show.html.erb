@@ -29,6 +29,10 @@
   <strong>Status:</strong>
   <%= @annonce.status %>
 </p>
+<p>
+  <strong>contact:</strong>
+  <%= @annonce.user.email %>
+</p>
 <% if @annonce.user == current_user %>
 <%= link_to 'Edit', edit_annonce_path(@annonce) %> 
 | <%= link_to 'Destroy', @annonce, method: :delete, data: { confirm: 'Are you sure?' } %>

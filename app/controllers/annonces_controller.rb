@@ -4,7 +4,7 @@ class AnnoncesController < ApplicationController
   # GET /annonces
   # GET /annonces.json
   def index
-    @annonces = Annonce.all
+    @annonces = Annonce.where(["title LIKE ?","%#{params[:search]}%"])
   end
 
   # GET /annonces/1
