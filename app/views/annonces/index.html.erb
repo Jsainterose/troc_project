@@ -1,7 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Annonces</h1>
-
+<form class="navbar-form navbar-left">
+<%= form_tag root_path, :method => 'get' do %>
+<%= text_field_tag :search, params[:search] %>
+<%= submit_tag "search" %>
+<% end %>
+</form>
 <table>
   <thead>
     <tr>
