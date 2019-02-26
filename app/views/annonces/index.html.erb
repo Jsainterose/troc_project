@@ -25,13 +25,8 @@
         <td><%= annonce.condition %></td>
         <td><%= annonce.status %></td>
         <td><%= link_to 'Show', annonce %></td>
-        <td><%= link_to 'Edit', edit_annonce_path(annonce) %></td>
-        <td><%= link_to 'Destroy', annonce, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Annonce', new_annonce_path %>
