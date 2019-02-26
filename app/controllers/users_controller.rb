@@ -8,6 +8,10 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def show
+    @user_annonces = @user.annonces
+  end
+
   def update
   end
 
