@@ -13,6 +13,7 @@ gem 'puma', '~> 3.11'
 
 gem 'devise'
 gem 'kaminari'
+gem "paperclip", "~> 6.0.0"
 
 # Use Rack Timeout. Read more: https://github.com/heroku/rack-timeout
 gem 'rack-timeout', '~> 0.5'

@@ -72,6 +72,6 @@ class AnnoncesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def annonce_params
-      params.require(:annonce).permit(:title, :description, :image_url, :location, :condition, :status, :user_id, :category_id)
+      params.require(:annonce).permit(:title, :description, :location, :condition, :status, :user_id, :category_id, :image)
     end
 end
