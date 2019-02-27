@@ -4,7 +4,8 @@ class AnnoncesController < ApplicationController
   # GET /annonces
   # GET /annonces.json
   def index
-    @annonces = Annonce.search(params[:search])
+    @annonces = Annonce.search(params[:search]).order(:title).page(params[:page])
+    
   end
 
   # GET /annonces/1

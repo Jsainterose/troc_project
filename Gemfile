@@ -12,6 +12,7 @@ gem 'rails', '~> 5.2.0'
 gem 'puma', '~> 3.11'
 
 gem 'devise'
+gem 'kaminari'
 
 # Use Rack Timeout. Read more: https://github.com/heroku/rack-timeout
 gem 'rack-timeout', '~> 0.5'
