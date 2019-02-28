@@ -1,14 +1,19 @@
+<div class="panel panel-primary">
+<div class="panel-heading"><h1><%= @annonce.title %></h1></div>
+<div class="panel-body">
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @annonce.title %>
-</p>
 
-<p>
+<div class="row">
+  <div class="col-md-6"><%= image_tag @annonce.image.url(:medium) %></div>
+  <div class="col-md-6">
   <strong>Description:</strong>
+  <br>
   <%= @annonce.description %>
-</p>
+  </div>
+</div>
+
+<br>
 
 <p>
   <strong>Location:</strong>
@@ -28,9 +33,14 @@
   <strong>contact:</strong>
   <%= @annonce.user.email %>
 </p>
-<% if @annonce.user == current_user %>
-<%= link_to 'Edit', edit_annonce_path(@annonce) %> 
-| <%= link_to 'Destroy', @annonce, method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
-|
-<%= link_to 'Back', annonces_path %>
+
+</div>
+  <div class="panel-footer">
+  <% if @annonce.user == current_user %>
+    <%= link_to '<button type="button" class="btn btn-primary">Editer</button>'.html_safe, edit_annonce_path(@annonce) %> 
+    <%= link_to '<button type="button" class="btn btn-primary">Supprimer</button>'.html_safe, @annonce, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+    <%= link_to '<button type="button" class="btn btn-primary">Retour</button>'.html_safe, annonces_path %>
+  </div>
+</div>
+
