@@ -1,4 +1,4 @@
-<%= form_with(model: annonce, local: true) do |form| %>
+<%= form_with(model: annonce, local: true, :html => {:class => "form-horizontal center"}) do |form| %>
 
   <% if annonce.errors.any? %>
     <div id="error_explanation">
@@ -12,38 +12,53 @@
     </div>
   <% end %>
  
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="form-group">
+    <%= form.label :title, "Titre :", class: "col-md-4 control-label"%>
+    <div class="col-md-4">
+    <%= form.text_field :title, class: "form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="field">
-  <%= form.label :image %>
-  <%= form.file_field :image %>
+  <div class="form-group">
+    <%= form.label :description, "Description :", class: "col-md-4 control-label"%>
+    <div class="col-md-4">
+    <%= form.text_area :description, class: "form-control" %>
+    </div>
   </div>
 
 
-  <div class="field">
-    <%= form.label :location %>
-    <%= form.text_area :location %>
+  <div class="form-group">
+    <%= form.label :image, "Image :", class: "col-md-4 control-label" %>
+    <div class="col-md-4">
+    <%= form.file_field :image%>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :condition %>
-    <%= form.text_field :condition %>
+
+  <div class="form-group">
+    <%= form.label :location, "Lieux :", class: "col-md-4 control-label"%>
+    <div class="col-md-4">
+    <%= form.text_area :location, class: "form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.text_field :status %>
+  <div class="form-group">
+    <%= form.label :condition, "Etat de l'objet :", class: "col-md-4 control-label" %>
+    <div class="col-md-4">
+    <%= form.text_field :condition, class: "form-control" %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group">
+    <%= form.label :status, "Status de l'objet :", class: "col-md-4 control-label" %>
+    <div class="col-md-4">
+    <%= form.text_field :status, class: "form-control"  %>
+    </div>
   </div>
+
+ <center>
+    <%= form.submit :Valider, class: 'btn btn-primary' %>
+</center>
+
+
 <% end %>
