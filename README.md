@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a project for a barter platfom.
+This app run on a docker
 
-Things you may want to cover:
+this features will comming soon
 
-* Ruby version
+* forgot de password function
 
-* System dependencies
+* backoffice of the website
 
-* Configuration
+* many pix for a "annonce"
 
-* Database creation
+* Advanced search bar
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
