@@ -39,6 +39,8 @@
   <% if @annonce.user == current_user %>
     <%= link_to '<button type="button" class="btn btn-primary">Editer</button>'.html_safe, edit_annonce_path(@annonce) %> 
     <%= link_to '<button type="button" class="btn btn-primary">Supprimer</button>'.html_safe, @annonce, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% elsif current_user == @admin %>
+    <%= link_to '<button type="button" class="btn btn-primary">Supprimer</button>'.html_safe, @annonce, method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
     <%= link_to '<button type="button" class="btn btn-primary">Retour</button>'.html_safe, annonces_path %>
   </div>

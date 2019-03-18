@@ -1,12 +1,9 @@
 <center><h1>Bonjour <%= @user.email %> </h1></center>
-<br>
-<%= link_to '<div class="btn btn-danger">Paramètres du compte</div>'.html_safe, edit_user_registration_path %>  
-<br>
 
-
-<h3>Vos annonces</h3>
   <div class="row">
-  <% @user_annonces.each do |annonce| %>
+  <% if current_user == @admin %>
+
+  <% @admin_annonces.each do |annonce| %>
     <div class="col-sm-4 col-md-2">
       <div class="thumbnail">
         <%= image_tag annonce.image.url(:medium) %>
@@ -17,10 +14,32 @@
       </div>
     </div>
     <% end %>
-  </div>
-  
+
+    <% else %>
+
   <br>
+    <%= link_to '<div class="btn btn-danger">Paramètres du compte</div>'.html_safe, edit_user_registration_path %>  
+  <br>
+    <h3>Vos annonces</h3>
+  <br>
+
+
+  <% @user_annonces.each do |annonce| %>
+    <div class="col-sm-4 col-md-2">
+      <div class="thumbnail">
+        <%= image_tag annonce.image.url(:medium) %>
+        <div class="caption">
+          <h3><%= annonce.title %></h3>
+          <%= link_to '<div class="btn btn-primary">Voir annonce</div>'.html_safe, annonce %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+   </div>
+   <br>
+  <center>
   <%= link_to '<div class="btn btn-primary">Poster une annonce</div>'.html_safe, new_annonce_path %>  
-  <br>
+ </center>
+  <% end %>
 
 

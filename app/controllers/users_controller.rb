@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   def show
     @user_annonces = @user.annonces
+    @admin_annonces = Annonce.all
   end
 
   def update
