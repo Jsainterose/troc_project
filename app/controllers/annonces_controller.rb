@@ -28,7 +28,7 @@ class AnnoncesController < ApplicationController
     @annonce = Annonce.new(annonce_params)
     @annonce.user_id = current_user.id
   # @annonce.category_id is used for send in the form the category that the admin on the platform choose
-    @annonce.category_id = Category.find(1).id
+    @annonce.category_id = @app_cat.id
     respond_to do |format|
       if @annonce.save
         format.html { redirect_to @annonce, notice: 'Annonce was successfully created.' }

@@ -27,7 +27,7 @@
       <% if current_user == @admin %>
         <%= link_to '<div>toutes les annonces</div>'.html_safe, user_path(current_user) %>
       <% else %>
-        <%= link_to '<div>Rechercher un Jeux </div>'.html_safe, root_path %> 
+        <%= link_to @app_cat.category_name, root_path%> 
       <% end %>
     </li>
   </ul>
